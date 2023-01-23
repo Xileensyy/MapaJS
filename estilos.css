@@ -1,0 +1,37 @@
+#map {
+  width: 100%;
+  height: 500px;
+  margin: 0 auto;
+}
+
+#Lado{
+  justify-content:space-evenly;
+  display: flex;
+  gap:10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"] {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#distance, #duration {
+  margin-top: 10px;
+  font-weight: bold;
+}
+

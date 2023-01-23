@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mapa de distancias</title>
+  <link rel="stylesheet" href="estilos.css">
+  <script src="mapa.js"> </script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9yjqMVRQLnPxz9k4EG7E46HzLJb_9x5Y&callback=initMap&libraries=places"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  </body>
+</head>
+
+<body onload="initMap()">
+  <div id="map" style="height: 500px;"></div>
+
+  <div id="Lado" style="padding-top: 20px;">
+    <label for="start">Origen:</label>
+    <input type="text" id="start" name="start">
+    <label for="end">Destino:</label>
+    <input type="text" id="end" name="end">
+  </div>
+
+  <div style="text-align: center;padding-top: 20px;">
+    <button onclick="calculateAndDisplayRoute()">Calcular distancia</button>
+    <div id="distance"></div>
+    <div id="duration"></div>
+  </div>
+
+  <!-- Script para mensaje por pantalla-->
+  
+  <div id="mensaje" style="background-color: #f1f1f1; padding: 20px; text-align: center; position: fixed; top: 0; left: 0; width: 100%;">
+    <span onclick="document.getElementById('mensaje').style.display='none'" class="close" title="Close">&times;</span>
+    <strong>Información:</strong> Puedes marcar origen y destino haciendo click en el mapa!
+  </div>
+  
+  <script>
+    var mensaje = document.getElementById("mensaje");
+    setTimeout(function(){ 
+      mensaje.style.display = "none"; 
+    }, 9500);
+  </script>
